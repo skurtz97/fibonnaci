@@ -2,7 +2,7 @@
 import time
 
 
-# generator version of fib
+# generator version of fib. this is the most efficient in python.
 def generator_fib():
     a, b = 0, 1
     while True:
@@ -11,14 +11,14 @@ def generator_fib():
 
 
 # memoized_fib generates the fibonacci sequence using a memoization technique
-def recursive_memoized_fib(n):
+def memoized_recursive_fib(n):
     memo = [None] * (n + 1)
     if n == 0:
         return 0
     if n == 1:
         return 1
     if memo[n] is None:
-        memo[n] = recursive_memoized_fib(n - 1) + recursive_memoized_fib(n - 2)
+        memo[n] = memoized_recursive_fib(n - 1) + memoized_recursive_fib(n - 2)
     return memo[n]
 
 
@@ -45,10 +45,10 @@ if __name__ == '__main__':
     print('Time:', end1 - start1)
     print()
 
-    print('recursive_memoized_fib:')
+    print('memoized_recursive_fib:')
     start2 = time.time()
     for i in range(0, 20):
-        print(recursive_memoized_fib(i))
+        print(memoized_recursive_fib(i))
     end2 = time.time()
     print('Time:', end2 - start2)
     print()
@@ -61,5 +61,5 @@ if __name__ == '__main__':
     print()
 
     print('Time for generator_fib:', end1 - start1)
-    print('Time for recursive_memoized_fib:', end2 - start2)
+    print('Time for memoized_recursive_fib:', end2 - start2)
     print('Time for naiive_recursive_fib:', end3 - start3)
