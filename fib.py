@@ -31,6 +31,7 @@ def naiive_recursive_fib(n):
     return naiive_recursive_fib(n - 1) + naiive_recursive_fib(n - 2)
 
 
+# generating the sequences and timing the functions
 if __name__ == '__main__':
     print('generator_fib:')
     start1 = time.time()
