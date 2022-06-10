@@ -1,4 +1,3 @@
-# naiive_fib generates the fibonacci sequence
 import time
 
 
