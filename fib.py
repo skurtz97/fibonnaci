@@ -15,9 +15,9 @@ def memoized_recursive_fib(n):
     memo = [None] * (n + 1)
     if n == 0:
         return 0
-    if n == 1:
+    elif n == 1:
         return 1
-    if memo[n] is None:
+    elif memo[n] is None:
         memo[n] = memoized_recursive_fib(n - 1) + memoized_recursive_fib(n - 2)
     return memo[n]
 
@@ -26,7 +26,7 @@ def memoized_recursive_fib(n):
 def naiive_recursive_fib(n):
     if n == 0:
         return 0
-    if n == 1:
+    elif n == 1:
         return 1
     return naiive_recursive_fib(n - 1) + naiive_recursive_fib(n - 2)
 
